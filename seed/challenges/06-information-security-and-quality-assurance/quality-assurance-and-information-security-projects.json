@@ -69,10 +69,9 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 4,
       "translations": {}
     },
     {
@@ -120,10 +119,9 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 4,
       "translations": {}
     },
     {
@@ -179,10 +177,9 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 4,
       "translations": {}
     },
     {
@@ -226,10 +223,9 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 4,
       "translations": {}
     },
     {
@@ -267,7 +263,7 @@
           "testString": ""
         },
         {
-          "text": "I can GET an entire thread with all it's replies from /api/replies/{board}?thread_id={thread_id}. Also hiding the same fields the client should be see.",
+          "text": "I can GET an entire thread with all its replies from /api/replies/{board}?thread_id={thread_id}. Also hiding the same fields the client should be see.",
           "testString": ""
         },
         {
@@ -279,11 +275,11 @@
           "testString": ""
         },
         {
-          "text": "I can report a thread and change it's reported value to true by sending a PUT request to /api/threads/{board} and pass along the threadid_. (Text response will be 'success')",
+          "text": "I can report a thread and change its reported value to true by sending a PUT request to /api/threads/{board} and pass along the threadid_. (Text response will be 'success')",
           "testString": ""
         },
         {
-          "text": "I can report a reply and change it's reported value to true by sending a PUT request to /api/replies/{board} and pass along the threadid_ & replyid_. (Text response will be 'success')",
+          "text": "I can report a reply and change its reported value to true by sending a PUT request to /api/replies/{board} and pass along the threadid_ & replyid_. (Text response will be 'success')",
           "testString": ""
         },
         {
@@ -293,10 +289,9 @@
       ],
       "solutions": [],
       "hints": [],
-      "type": "basejump",
+      "type": "backend",
       "isRequired": true,
       "releasedOn": "January 15, 2017",
-      "challengeType": 4,
       "translations": {}
     }
   ]

@@ -166,12 +166,12 @@
         "  "
       ],
       "tests": [
-        "assert(code.match(/@mixin\\s+?border-radius\\(\\$radius\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.');",
+        "assert(code.match(/@mixin\\s+?border-radius\\(\\s*?\\$radius\\s*?\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-radius</code> which has a parameter named <code>$radius</code>.');",
         "assert(code.match(/-webkit-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-webkit-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
         "assert(code.match(/-moz-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-moz-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
         "assert(code.match(/-ms-border-radius:\\s*?\\$radius;/gi), 'message: Your code should include the <code>-ms-border-radius</code> vender prefix that uses the <code>$radius</code> parameter.');",
         "assert(code.match(/border-radius:\\s*?\\$radius;/gi).length == 4, 'message: Your code should include the general <code>border-radius</code> rule that uses the <code>$radius</code> parameter.');",
-        "assert(code.match(/@include\\s+?border-radius\\(15px\\);/gi), 'message: Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.');"
+        "assert(code.match(/@include\\s+?border-radius\\(\\s*?15px\\s*?\\);/gi), 'message: Your code should call the <code>border-radius mixin</code> using the <code>@include</code> keyword, setting it to 15px.');"
       ],
       "solutions": [],
       "hints": [],
@@ -214,11 +214,11 @@
         "<div id=\"box\"></div>"
       ],
       "tests": [
-        "assert(code.match(/@mixin\\s+?border-stroke\\(\\$val\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-stroke</code> which has a parameter named <code>$val</code>.');",
-        "assert(code.match(/@if\\s+?\\$val\\s*?===?\\s*?light\\s*?{\\s*?border:\\s*?1px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.');",
-        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?medium\\s*?{\\s*?border:\\s*?3px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.');",
-        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?heavy\\s*?{\\s*?border:\\s*?6px\\s+?solid\\s+?black;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.');",
-        "assert(code.match(/@else\\s*?{\\s*?border:\\s*?none;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else</code> statement to set the <code>border</code> to none.');"
+        "assert(code.match(/@mixin\\s+?border-stroke\\s*?\\(\\s*?\\$val\\s*?\\)\\s*?{/gi), 'message: Your code should declare a <code>mixin</code> named <code>border-stroke</code> which has a parameter named <code>$val</code>.');",
+        "assert(code.match(/@if\\s+?\\$val\\s*?===?\\s*?light\\s*?{\\s*?border\\s*?:\\s*?1px\\s+?solid\\s+?black\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@if</code> statement to check if <code>$val</code> is light, and to set the <code>border</code> to 1px solid black.');",
+        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?medium\\s*?{\\s*?border\\s*?:\\s*?3px\\s+?solid\\s+?black\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is medium, and to set the <code>border</code> to 3px solid black.');",
+        "assert(code.match(/@else\\s+?if\\s+?\\$val\\s*?===?\\s*?heavy\\s*?{\\s*?border\\s*?:\\s*?6px\\s+?solid\\s+?black\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else if</code> statement to check if <code>$val</code> is heavy, and to set the <code>border</code> to 6px solid black.');",
+        "assert(code.match(/@else\\s*?{\\s*?border\\s*?:\\s*?none\\s*?;\\s*?}/gi), 'message: Your <code>mixin</code> should have an <code>@else</code> statement to set the <code>border</code> to none.');"
       ],
       "solutions": [],
       "hints": [],

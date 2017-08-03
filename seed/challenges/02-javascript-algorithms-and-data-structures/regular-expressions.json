@@ -54,7 +54,7 @@
       "id": "587d7db3367417b2b2512b8f",
       "title": "Match Literal Strings",
       "description": [
-        "In the last challenge, you searched for the word <code>\"the\"</code> using the regular expression <code>/the/</code>. That regex searched for a literal match of the string <code>\"the\"</code>. Here's another example searching for a literal match of the string <code>\"Kevin\"</code>:",
+        "In the last challenge, you searched for the word <code>\"Hello\"</code> using the regular expression <code>/Hello/</code>. That regex searched for a literal match of the string <code>\"Hello\"</code>. Here's another example searching for a literal match of the string <code>\"Kevin\"</code>:",
         "<blockquote>let testStr = \"Hello, my name is Kevin.\";<br>let testRegex = /Kevin/;<br>testRegex.test(testStr);<br>// Returns true</blockquote>",
         "Any other forms of <code>\"Kevin\"</code> will not match. For example, the regex <code>/Kevin/</code> will not match <code>\"kevin\"</code> or <code>\"KEVIN\"</code>.",
         "<blockquote>let wrongRegex = /kevin/;<br>wrongRegex.test(testStr);<br>// Returns false</blockquote>",
@@ -910,7 +910,7 @@
         "<blockquote>let repeatStr = \"regex regex\";<br>let repeatRegex = /(\\w+)\\s\\1/;<br>repeatRegex.test(repeatStr); // Returns true<br>repeatStr.match(repeatRegex); // Returns [\"regex regex\", \"regex\"]</blockquote>",
         "Using the <code>.match()</code> method on a string will return an array with the string it matches, along with its capture group.",
         "<hr>",
-        "Use <code>capture groups</code> in <code>reRegex</code> to match numbers that appear three times in a string each separated by a space."
+        "Use <code>capture groups</code> in <code>reRegex</code> to match numbers that are repeated only three times in a string, each separated by a space."
       ],
       "challengeSeed": [
         "let repeatNum = \"42 42 42\";",
@@ -923,7 +923,7 @@
         "assert(reRegex.source.match(/\\\\s/g).length === 2, 'message: Your regex should have two spaces separating the three numbers.');",
         "assert(reRegex.test(\"42 42 42\"), 'message: Your regex should match <code>\"42 42 42\"</code>.');",
         "assert(reRegex.test(\"100 100 100\"), 'message: Your regex should match <code>\"100 100 100\"</code>.');",
-        "assert.equal((\"42 42 42 42\").match(reRegex.source)[0], (\"42 42 42\"), 'message: Your regex should not match <code>\"42 42 42 42\"</code>.');",
+        "assert.equal((\"42 42 42 42\").match(reRegex.source), null, 'message: Your regex should not match <code>\"42 42 42 42\"</code>.');",
         "assert.equal((\"42 42\").match(reRegex.source), null, 'message: Your regex should not match <code>\"42 42\"</code>.');",
         "assert(!reRegex.test(\"101 102 103\"), 'message: Your regex should not match <code>\"101 102 103\"</code>.');",
         "assert(!reRegex.test(\"1 2 3\"), 'message: Your regex should not match <code>\"1 2 3\"</code>.');",

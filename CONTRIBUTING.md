@@ -50,6 +50,8 @@ node -v
 mongo --version
 ```
 
+To check your MongoDB version on Windows, you have to locate the installation directory. It is probably located at something like `C:\Program Files\MongoDB\Server\3.4\` where 3.4 is your version number.
+
 If your versions are lower than the prerequisite versions, you should update.
 
 Platform-specific guides to setting up a development environment:
@@ -191,7 +193,12 @@ Now you will need to start MongoDB, and then seed the database, then you can sta
 
 ```bash
 # Start the mongo server in a separate terminal
+# On OS X:
 mongod
+
+# If you are using Windows, you have to instead specify the full path to the mongod binary
+# Make sure to replace 3.4 with the version you have installed
+"C:\Program Files\MongoDB\Server\3.4\bin\mongod"
 
 # Initialize freeCodeCamp
 # This will seed the database for the first time.
@@ -251,7 +258,7 @@ and ensure all tests pass.
 ### Squash Your Commits
 When you make a pull request, all of your changes need to be in one commit.
 
-If you have made more then one commit, then you will need to _squash_ your commits.
+If you have made more than one commit, then you will need to _squash_ your commits.
 
 To do this, see [Squashing Your Commits](http://forum.freecodecamp.com/t/how-to-squash-multiple-commits-into-one-with-git/13231).
 
@@ -271,7 +278,7 @@ related issues in our [Contributors chat room](https://gitter.im/FreeCodeCamp/Co
 
 #### Important: ALWAYS EDIT ON A BRANCH
 
-Take away only one thing from this document, it should be this: Never, **EVER**
+Take away only one thing from this document: Never, **EVER**
 make edits to the `staging` branch. ALWAYS make a new branch BEFORE you edit
 files. This is critical, because if your PR is not accepted, your copy of
 staging will be forever sullied and the only way to fix it is to delete your
@@ -316,13 +323,22 @@ nothing to commit, working directory clean
     add .` to add all unstaged files. Take care, though, because you can
     accidentally add files you don't want added. Review your `git status` first.
 
-6.  Commit your edits: `git commit -m "Brief Description of Commit"`. Do not add the issue number in the commit message.
+6.  Commit your edits (follow any one of the below methods):
+
+    a. Using the inbuilt script (_recommended_):
+       - We have a [tool](https://commitizen.github.io/cz-cli/) that helps you to make standard commit messages. Simply execute `npm run commit` after you have added the necessary files as mentioned in the step earlier.
+
+    b. Using Commitizen CLI:
+       - If you are already using [commitizen](http://commitizen.github.io/cz-cli/), simply doing a `git cz` works as expected too!
 
 7.  Squash your commits, if there are more than one.
 
-8.  Push your commits to your GitHub Fork: `git push -u origin branch/name-here`
+8.  If you would want to add/remove changes to previous commit simply add the files as in Step 5 earlier,
+    and use `git commit --amend` or `git commit --amend --no-edit` (for keeping the same commit message).
 
-9.  Go to [Common Steps](#common-steps)
+9.  Push your commits to your GitHub Fork: `git push -u origin branch/name-here`
+
+10.  Go to [Common Steps](#common-steps)
 
 ##### Method 2: Editing via the GitHub Interface
 
@@ -357,7 +373,7 @@ for further information
 5.  In the body of your PR include a more detailed summary of the changes you
     made and why.
 
-    -   If the PR is meant to fix an existing bug/issue, then, at the end of
+    -   If the PR is meant to fix an existing bug/issue then, at the end of
         your PR's description, append the keyword `closes` and #xxxx (where xxxx
         is the issue number). Example: `closes #1337`. This tells GitHub to
         close the existing issue, if the PR is merged.

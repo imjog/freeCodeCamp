@@ -283,9 +283,15 @@ module.exports = function(app) {
     });
   }
 
+  const isSignUpDisabled = !!process.env.DISABLE_SIGNUP;
   function getEmailSignup(req, res) {
     if (req.user) {
       return res.redirect('/');
+    }
+    if (isSignUpDisabled) {
+      return res.render('account/beta', {
+        title: 'New sign ups are disabled'
+      });
     }
     return res.render('account/email-signup', {
       title: 'Sign up for freeCodeCamp using your Email Address'
@@ -463,6 +469,7 @@ module.exports = function(app) {
           isGithubCool: true,
           isCheater: true,
           isLocked: true,
+          isAvailableForHire: true,
           isFrontEndCert: true,
           isDataVisCert: true,
           isBackEndCert: true,
